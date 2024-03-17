@@ -39,7 +39,7 @@
 
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $url->original_url }}</td>
-                <td>{{ $url->short_code }}</td>
+                <td><a href="{{ route('redirect', ['shortCode' => $url->short_code]) }}">{{ $url->short_code }}</a></td>
                 <td>
                     <form action="{{ route('deactivate', ['id' => $url->id]) }}" method="POST">
                         @csrf

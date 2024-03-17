@@ -28,3 +28,5 @@ Route::delete('/{id}', [App\Http\Controllers\HomeController::class, 'destroy'])-
 Route::get('/{id}/edit', [App\Http\Controllers\HomeController::class, 'getByid'])->name('edit');
 Route::put('/{id}', [App\Http\Controllers\HomeController::class, 'update'])->name('update');
 Route::post('/{id}/deactivate',[App\Http\Controllers\HomeController::class, 'deactivate'])->name('deactivate');
+Route::get('/redirect/{shortCode}', [App\Http\Controllers\UrlController::class, 'redirect'])->name('redirect');
+

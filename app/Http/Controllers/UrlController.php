@@ -68,4 +68,14 @@ class UrlController extends Controller
             'success' => 'Plan Upgraded successfully.'
         ]);
     }
+
+    public function redirect($shortCode)
+    {
+        $shortenedUrl = ShortenedUrl::where('short_code', $shortCode)->first();
+
+        if (!$shortenedUrl) {
+            abort(404);
+        }
+        return redirect($shortenedUrl->original_url);
+    }
 }
